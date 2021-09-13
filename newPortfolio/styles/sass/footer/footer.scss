@@ -1,0 +1,75 @@
+.footer{
+    color: white;
+    margin-top: 1rem;
+    border-top: .1rem solid white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &-licenses {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+        @include mediaQuery(tablet9) {
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        & > p {
+            text-align: center;
+        }
+    }
+    &-top {
+        margin-top: .5rem;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.5rem;
+        @include mediaQuery(tablet9) {
+            font-size: 1rem;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        &>div:not(:last-child) {
+            @include mediaQuery(tablet9) {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+    &-contact {
+        margin-left: .5rem;
+    }
+    &-copy {
+        @include mediaQuery(tablet9) {
+            display: flex;
+            flex-direction: row;
+        }
+        margin-right: .5rem;
+    }
+    &-links {
+        display: flex;
+        @include mediaQuery(tablet9) {
+            justify-content: center;
+            align-items: center;
+        }
+        max-width: 100vw;
+        &>a {
+            color: white;
+            text-decoration: none;
+            fill:white;
+            display: flex;
+            align-items: center;
+            margin-left: 1rem;
+            &>svg{
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+    }
+}

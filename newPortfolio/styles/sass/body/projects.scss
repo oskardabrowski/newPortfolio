@@ -1,0 +1,115 @@
+.projects {
+    width: 100%;
+    color: white;
+    text-align: center;
+
+    &-header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5rem;
+        font-weight: 700;
+        margin-top: 5rem;
+        &>span {
+            color: #007bff;
+        }
+        @include mediaQuery(tablet7) {
+            font-size: 4rem;
+        }
+        @include mediaQuery(phone6) {
+            font-size: 2.5rem;
+        }
+        @include mediaQuery(phone5) {
+            font-size: 2rem;
+        }
+
+    }
+    &-project {
+        display: inline-block;
+        width: 45%;
+        position: relative;
+        margin: 2rem;
+        overflow: hidden;
+        color: white;
+        text-decoration: none;
+        @include mediaQuery(tablet1100) {
+            left: 50%;
+            transform: translate(-50%, 0%);
+            display: block;
+            margin: 1rem 0rem;
+        }
+        @include mediaQuery(tablet9) {
+            width: 100%;
+        }
+        &-name {
+            position: absolute;
+            font-size: 2.5rem;
+            top: 3rem;
+            left: -25rem;
+            @include mediaQuery(tablet9) {
+                left: 3rem;
+            }
+            @include mediaQuery(phone5) {
+                font-size: 1.5rem;
+                top: 1rem;
+                left: 1rem;
+                padding: 1.5rem;
+            }
+            font-weight: 600;
+            transition: all .5s ease-in-out;
+            z-index: 20;
+            background-color: #007bff;
+            padding: 2rem;
+            clip-path: polygon(90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%, 0% 0%);
+        }
+        &-image {
+            width: 100%;
+            transition: all .5s ease-in-out;
+            & > img {
+                width: 100%;
+                transition: all .5s ease-in-out;
+                z-index: 10;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &-more {
+        width: 100vw;
+        color: white;
+        fill: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        position: relative;
+        width: 15rem;
+        margin-left: 1rem;
+
+        &::after {
+            content: "";
+            width: 0rem;
+            height: .1rem;
+            background-color: white;
+            position: absolute;
+            bottom: .5rem;
+            left: 0;
+            transition: all .5s ease-in-out
+        }
+        &>svg {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        &:hover {
+            cursor: pointer;
+            &::after {
+                width: 15rem;
+            }
+        }
+    }
+}

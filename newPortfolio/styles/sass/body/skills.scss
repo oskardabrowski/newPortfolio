@@ -1,0 +1,84 @@
+.skills {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    @include mediaQuery(tablet1100) {
+        margin-top: 5rem;
+    }
+    &-header {
+        margin-top: 3rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5rem;
+        font-weight: 700;
+        & > span {
+            color: #007bff;
+        }
+        @include mediaQuery(phone6) {
+            margin-top: 2rem;
+            font-size: 3rem;
+        }
+    }
+
+    &-container {
+        width: 100%;
+        @include mediaQuery(tablet1100) {
+            overflow: hidden;
+        }
+        &-group {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            margin: 1.5rem 0rem 1.5rem 0rem;
+            @include mediaQuery(phone6) {
+                flex-direction: column;
+            }
+            &-element {
+                fill: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.5rem;
+                transition: all .5s ease-in-out;
+                @include mediaQuery(tablet1100) {
+                    font-size: 1rem;
+
+                    & > svg {
+                        width: 5rem;
+                        height: 5rem;
+                    }
+                }
+                @include mediaQuery(phone6) {
+                    font-size: 2rem;
+
+                    & > svg {
+                        width: 10rem;
+                        height: 10rem;
+                    }
+                }
+
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.lazyLeft{
+    @include mediaQuery(tablet1100) {
+        left: 0%;
+    }
+    position: relative;
+    left: 100%;
+    transition: all 1s ease-in-out;
+}
+
+.animatedLeft {
+    left: 0;
+}

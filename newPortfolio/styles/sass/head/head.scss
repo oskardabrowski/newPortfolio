@@ -1,0 +1,102 @@
+.header {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+
+    &-logo {
+        width: 25rem;
+        height: 25rem;
+
+        @include mediaQuery(tablet7) {
+            width: 15rem;
+            height: 15rem;
+        }
+
+        &-element {
+            fill:none;
+            stroke:#007bff;
+            stroke-width: 1.5px;
+            stroke-dashoffset: 1000%;
+            stroke-dasharray: 1000%;
+            animation: logoAnimate 3s 1s linear normal forwards;
+        }
+    }
+
+    &-name {
+        position: absolute;
+        overflow: hidden;
+        & > svg {
+            position: relative;
+            right: -100%;
+            width: 32.5rem;
+            animation: showRight 1s 4s ease-in-out normal forwards;
+            @include mediaQuery(tablet7) {
+                width: 20rem;
+            }
+        }
+    }
+
+    &-links {
+        bottom: 40%;
+        position: absolute;
+        color: white;
+        font-size: 1.5rem;
+        font-family: 'Urbanist', sans-serif;
+        overflow: hidden;
+        @include mediaQuery(tablet7) {
+            font-size: 1rem;
+        }
+        & > a {
+            color: white;
+            text-decoration: none;
+            transition: all .5s ease-in-out;
+            position: relative;
+            right: 100%;
+            animation: showLeft 1s 4s ease-in-out normal forwards;
+
+            &:hover {
+                color: #005ab9;
+            }
+        }
+
+        & > span {
+            color: #007bff;
+            position: relative;
+            right: 100%;
+            animation: showLeft 1s 4s ease-in-out normal forwards;
+        }
+    }
+}
+
+@keyframes showLeft {
+    0% {
+        right: 100%;
+    } 100% {
+        right: 0;
+    }
+}
+
+@keyframes showRight {
+    0% {
+        right: -100%;
+    } 100% {
+        right: 0;
+    }
+}
+
+@keyframes logoAnimate {
+    0% {
+        stroke-dashoffset: 1000%;
+        stroke:#007bff;
+    } 85% {
+        stroke-dashoffset: 700%;
+        stroke:#007bff;
+    } 100% {
+        stroke-dashoffset: 700%;
+        stroke:#007bff71;
+    }
+}

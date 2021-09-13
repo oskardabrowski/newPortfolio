@@ -1,0 +1,47 @@
+.aboutMe {
+    margin-top: 3rem;
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 5rem;
+        font-weight: 600;
+        & > span {
+            color: #007bff;
+        }
+        @include mediaQuery(phone6) {
+            font-size: 3rem;
+        }
+    }
+    &-headerSmall {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 3.5rem;
+        font-weight: 600;
+        margin-top: 3rem;
+        & > span {
+            color: #007bff;
+        }
+        @include mediaQuery(phone6) {
+            font-size: 1.5rem;
+        }
+    }
+    &-part {
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 1.5rem;
+        @include mediaQuery(phone6) {
+            font-size: 1rem;
+            text-align: left;
+        }
+    }
+}
+
+.headerPhone {
+    display: flex;
+    flex-direction: column;
+}
